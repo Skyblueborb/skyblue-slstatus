@@ -67,9 +67,12 @@ static const struct arg args[] = {
 	/* function format          argument */
 	//{ datetime, "%s",           "%F %T" },
 	//{ wifi_perc, "W: (%3s%% on ", "wlp8s0" },
-	{  netspeed_rx, "%sB/s  ", "enp3s0" },
+	{ run_command, " %s  | ", "playerctl metadata xesam:title" },
+	{ netspeed_rx, "%sB/s | ", "enp4s0" },
 	//{ run_command, ":%4s | ", "amixer sget Master | awk -F\"[][]\" '/%/ { print $2 }' | head -n1" },
-	{ cpu_perc, "[CPU  %s%%]  ", NULL	      },
-	//{ ram_perc, "[RAM  %s%%]   ", NULL	      },
+	{ cpu_perc, "[CPU  %s%%] ", NULL	      },
+	{ ram_used, "[RAM  %s] | ", NULL	      },
+	//{ keymap, " %s " },
+	//{ run_command, "%4s", "cmus-remote --server /run/user/1000/cmus-socket -Q | awk '/title/ {$1=$2=""; print substr($0,3)}'" },
 	{ datetime, "%s",           "%a %b %d %R" },
 };
